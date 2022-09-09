@@ -17,6 +17,19 @@ namespace TurRetur_KørselsLogbog
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 x = new Form2();
+            x.Show();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 y = new Form3();
+            y.Show();
+        }
     }
 }
