@@ -16,8 +16,8 @@ namespace TurRetur_KørselsLogbog
         public Form2()
         {
             InitializeComponent();
-            BrugereFundet.DataSource = brugere;
-            BrugereFundet.DisplayMember = "AlInfo";
+            //BrugereFundet.DataSource = brugere;
+            //BrugereFundet.DisplayMember = "AlInfo";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -30,6 +30,14 @@ namespace TurRetur_KørselsLogbog
         private void button4_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
+            //db.GetBrugere(AlInfo);
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'kørselLogDataSet1.Brugere' table. You can move, or remove it, as needed.
+            this.brugereTableAdapter.Fill(this.kørselLogDataSet1.Brugere);
+
         }
     }
 }

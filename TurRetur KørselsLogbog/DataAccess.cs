@@ -12,9 +12,10 @@ namespace TurRetur_KørselsLogbog
     {
         public List<Bruger> GetBrugere(string Fornavn)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("KørselLogDB"))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("KørselLogDB")))
             {
-
+                var output = connection.Query<Bruger>($"SELECT * FROM Brugere").ToList();
+                return output;
             }
         }
     }
