@@ -53,7 +53,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.BrugereFundet = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -285,13 +285,14 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Medarbejder ID";
             // 
-            // listBox1
+            // BrugereFundet
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(527, 28);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(261, 459);
-            this.listBox1.TabIndex = 12;
+            this.BrugereFundet.AccessibleName = "brugereFundet";
+            this.BrugereFundet.FormattingEnabled = true;
+            this.BrugereFundet.Location = new System.Drawing.Point(527, 28);
+            this.BrugereFundet.Name = "BrugereFundet";
+            this.BrugereFundet.Size = new System.Drawing.Size(261, 459);
+            this.BrugereFundet.TabIndex = 12;
             // 
             // button3
             // 
@@ -310,6 +311,7 @@
             this.button4.TabIndex = 14;
             this.button4.Text = "Vis Brugere";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -340,7 +342,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.BrugereFundet);
             this.Controls.Add(this.Rediger);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
@@ -381,7 +383,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox BrugereFundet;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;

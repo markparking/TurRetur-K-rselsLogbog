@@ -12,9 +12,12 @@ namespace TurRetur_KørselsLogbog
 {
     public partial class Form2 : Form
     {
+        List<Bruger> brugere = new List<Bruger>();
         public Form2()
         {
             InitializeComponent();
+            BrugereFundet.DataSource = brugere;
+            BrugereFundet.DisplayMember = "AlInfo";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -22,6 +25,11 @@ namespace TurRetur_KørselsLogbog
             this.Hide();
             Form1 x = new Form1();
             x.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataAccess db = new DataAccess();
         }
     }
 }
