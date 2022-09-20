@@ -43,7 +43,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Rediger = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.GemÆndring = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -61,17 +61,16 @@
             this.kørselLogDataSet1 = new TurRetur_KørselsLogbog.KørselLogDataSet1();
             this.brugereBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.brugereTableAdapter = new TurRetur_KørselsLogbog.KørselLogDataSet1TableAdapters.BrugereTableAdapter();
+            this.kørselLogDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.brugereBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.medarbejderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fornavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.efternavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nrPladeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.Rediger.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kørselLogDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brugereBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kørselLogDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brugereBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,12 +104,13 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Tilføj";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(7, 262);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.Size = new System.Drawing.Size(131, 20);
             this.textBox5.TabIndex = 9;
             // 
             // label5
@@ -189,9 +189,10 @@
             // Rediger
             // 
             this.Rediger.AccessibleName = "RedigerBrugerBox";
-            this.Rediger.Controls.Add(this.button2);
+            this.Rediger.Controls.Add(this.GemÆndring);
             this.Rediger.Controls.Add(this.textBox6);
             this.Rediger.Controls.Add(this.label6);
+            this.Rediger.Controls.Add(this.button3);
             this.Rediger.Controls.Add(this.textBox7);
             this.Rediger.Controls.Add(this.label7);
             this.Rediger.Controls.Add(this.textBox8);
@@ -207,21 +208,23 @@
             this.Rediger.TabStop = false;
             this.Rediger.Text = "Rediger Bruger";
             // 
-            // button2
+            // GemÆndring
             // 
-            this.button2.AccessibleName = "tilføjBruger";
-            this.button2.Location = new System.Drawing.Point(119, 300);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Tilføj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.GemÆndring.AccessibleName = "tilføjBruger";
+            this.GemÆndring.Location = new System.Drawing.Point(119, 300);
+            this.GemÆndring.Name = "GemÆndring";
+            this.GemÆndring.Size = new System.Drawing.Size(75, 23);
+            this.GemÆndring.TabIndex = 10;
+            this.GemÆndring.Text = "Gem";
+            this.GemÆndring.UseVisualStyleBackColor = true;
+            this.GemÆndring.Click += new System.EventHandler(this.GemÆndring_Click);
             // 
             // textBox6
             // 
+            this.textBox6.AccessibleName = "rEmail";
             this.textBox6.Location = new System.Drawing.Point(7, 262);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.Size = new System.Drawing.Size(128, 20);
             this.textBox6.TabIndex = 9;
             // 
             // label6
@@ -235,6 +238,7 @@
             // 
             // textBox7
             // 
+            this.textBox7.AccessibleName = "rNrplade";
             this.textBox7.Location = new System.Drawing.Point(7, 212);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
@@ -251,6 +255,7 @@
             // 
             // textBox8
             // 
+            this.textBox8.AccessibleName = "rEfternavn";
             this.textBox8.Location = new System.Drawing.Point(7, 162);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
@@ -267,6 +272,7 @@
             // 
             // textBox9
             // 
+            this.textBox9.AccessibleName = "rFornavn";
             this.textBox9.Location = new System.Drawing.Point(7, 114);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
@@ -283,6 +289,8 @@
             // 
             // textBox10
             // 
+            this.textBox10.AccessibleName = "rMedarbejderID";
+            this.textBox10.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.textBox10.Location = new System.Drawing.Point(7, 62);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
@@ -299,16 +307,17 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(713, 493);
+            this.button3.Location = new System.Drawing.Point(36, 300);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 36);
+            this.button3.Size = new System.Drawing.Size(77, 23);
             this.button3.TabIndex = 13;
             this.button3.Text = "Slet Bruger";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(483, 493);
+            this.button4.Location = new System.Drawing.Point(288, 149);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(130, 36);
             this.button4.TabIndex = 14;
@@ -350,52 +359,24 @@
             // 
             this.brugereTableAdapter.ClearBeforeFill = true;
             // 
+            // kørselLogDataSet1BindingSource
+            // 
+            this.kørselLogDataSet1BindingSource.DataSource = this.kørselLogDataSet1;
+            this.kørselLogDataSet1BindingSource.Position = 0;
+            // 
+            // brugereBindingSource1
+            // 
+            this.brugereBindingSource1.DataMember = "Brugere";
+            this.brugereBindingSource1.DataSource = this.kørselLogDataSet1BindingSource;
+            // 
             // dataGridView1
             // 
-            this.dataGridView1.AccessibleName = "BrugerDataGrid";
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.medarbejderIDDataGridViewTextBoxColumn,
-            this.fornavnDataGridViewTextBoxColumn,
-            this.efternavnDataGridViewTextBoxColumn,
-            this.nrPladeDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.brugereBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(483, 37);
+            this.dataGridView1.Location = new System.Drawing.Point(424, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(542, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(606, 517);
             this.dataGridView1.TabIndex = 17;
-            // 
-            // medarbejderIDDataGridViewTextBoxColumn
-            // 
-            this.medarbejderIDDataGridViewTextBoxColumn.DataPropertyName = "MedarbejderID";
-            this.medarbejderIDDataGridViewTextBoxColumn.HeaderText = "MedarbejderID";
-            this.medarbejderIDDataGridViewTextBoxColumn.Name = "medarbejderIDDataGridViewTextBoxColumn";
-            // 
-            // fornavnDataGridViewTextBoxColumn
-            // 
-            this.fornavnDataGridViewTextBoxColumn.DataPropertyName = "Fornavn";
-            this.fornavnDataGridViewTextBoxColumn.HeaderText = "Fornavn";
-            this.fornavnDataGridViewTextBoxColumn.Name = "fornavnDataGridViewTextBoxColumn";
-            // 
-            // efternavnDataGridViewTextBoxColumn
-            // 
-            this.efternavnDataGridViewTextBoxColumn.DataPropertyName = "Efternavn";
-            this.efternavnDataGridViewTextBoxColumn.HeaderText = "Efternavn";
-            this.efternavnDataGridViewTextBoxColumn.Name = "efternavnDataGridViewTextBoxColumn";
-            // 
-            // nrPladeDataGridViewTextBoxColumn
-            // 
-            this.nrPladeDataGridViewTextBoxColumn.DataPropertyName = "NrPlade";
-            this.nrPladeDataGridViewTextBoxColumn.HeaderText = "NrPlade";
-            this.nrPladeDataGridViewTextBoxColumn.Name = "nrPladeDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // Form2
             // 
@@ -406,7 +387,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.Rediger);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
@@ -420,6 +400,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kørselLogDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brugereBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kørselLogDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brugereBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -440,7 +422,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox Rediger;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button GemÆndring;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox7;
@@ -458,11 +440,8 @@
         private KørselLogDataSet1 kørselLogDataSet1;
         private System.Windows.Forms.BindingSource brugereBindingSource;
         private KørselLogDataSet1TableAdapters.BrugereTableAdapter brugereTableAdapter;
+        private System.Windows.Forms.BindingSource kørselLogDataSet1BindingSource;
+        private System.Windows.Forms.BindingSource brugereBindingSource1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medarbejderIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fornavnDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn efternavnDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nrPladeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }

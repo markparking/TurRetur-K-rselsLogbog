@@ -18,12 +18,5 @@ namespace TurRetur_KørselsLogbog
                 return connection.Query<Bruger>($"SELECT * FROM Brugere").ToList();
             }
         }
-        public List<Kørsel> GetKørsel()
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("KørselLogDB")))
-            {
-                return connection.Query<Kørsel>($"SELECT * FROM KørselsLog").ToList();
-            }
-        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TurRetur_KørselsLogbog
 {
@@ -22,6 +23,7 @@ namespace TurRetur_KørselsLogbog
             this.Hide();
             Form2 x = new Form2();
             x.Show();
+
 
         }
 

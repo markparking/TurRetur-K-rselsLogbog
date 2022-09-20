@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TurRetur_KørselsLogbog
 {
-    public class Kørsel
+   public class Kørsel
     {
         public int kID { get; set; }
         public string mID { get; set; }

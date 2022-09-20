@@ -309,4 +309,10 @@
   <metadata name="brugereTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>344, 17</value>
   </metadata>
+  <metadata name="kørselLogDataSet1BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>512, 17</value>
+  </metadata>
+  <metadata name="brugereBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>744, 17</value>
+  </metadata>
 </root>

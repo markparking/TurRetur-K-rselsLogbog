@@ -14,6 +14,8 @@ namespace TurRetur_KørselsLogbog
         public string NrPlade { get; set; }
         public string Email { get; set; }
 
+        private string myVar;
+
         public string AlInfo
         {
             get 
