@@ -61,6 +61,7 @@ namespace TurRetur_KørselsLogbog
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show("Fejl. Kørsel ikke oprettet.");
             }
         }
 
@@ -92,6 +93,7 @@ namespace TurRetur_KørselsLogbog
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MessageBox.Show("Fejl. Kørsel blev ikke slettet.");
             }
         }
 
